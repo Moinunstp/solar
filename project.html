@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisha Solar Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="alisha.jpg" style="border-radius:50%;">
+</head>
+<style>
+        :root {
+            --solar-green: #73e600;
+            --solar-dark: #4d9900;
+            --text-dark: #2a3439;
+            --text-light: #5a6a70;
+            --bg-light: #f5f7fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .projects-gallery {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-top: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--solar-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--solar-green);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(115, 230, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover .play-button {
+            background: var(--solar-dark);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--solar-dark);
+        }
+
+        .video-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        .lightbox-video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-lightbox:hover {
+            color: var(--solar-green);
+        }
+
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-thumbnail {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-gallery {
+                padding: 60px 5%;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .video-thumbnail {
+                height: 150px;
+            }
+            
+            .play-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+                .proj-gall {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .sectin-headr {
+            margin-top: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sectin-headr h2 {
+            font-size: 2.8rem;
+            color: var(--solar-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .sectin-headr h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--solar-green);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .sectin-headr p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+
+        .filtr-btuns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filtr-btun {
+            padding: 8px 20px;
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filtr-btun:hover, .filtr-btun.active {
+            background: var(--solar-green);
+            color: var(--white);
+            border-color: var(--solar-green);
+        }
+
+        .img-grd {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gall-itm {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gall-itm:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gall-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gall-itm:hover .gall-img {
+            transform: scale(1.05);
+        }
+
+        .img-overly {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gall-itm:hover .img-overly {
+            opacity: 1;
+        }
+        .img-titl {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .img-dec {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.1s;
+        }
+
+        .gall-itm:hover .img-titl,
+        .gall-itm:hover .img-dec {
+            transform: translateY(0);
+        }
+
+        .zom-icn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--solar-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .gall-itm:hover .zom-icn {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ligtbox Styles */
+        .ligtbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .ligtbox-contnt {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .ligtbox-img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .ligtbox-captin {
+            color: var(--white);
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .clos-ligtbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .clos-ligtbox:hover {
+            color: var(--solar-green);
+        }
+
+        .ligtbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .ligtbox-nav button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .ligtbox-nav button:hover {
+            background: var(--solar-green);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .sectin-headr h2 {
+                font-size: 2.2rem;
+            }
+            
+            .img-grd {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .img-overly {
+                padding: 15px;
+            }
+            
+            .img-titl {
+                font-size: 1.1rem;
+            }
+            
+            .img-dec {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .proj-gall {
+                padding: 60px 5%;
+            }
+            
+            .sectin-headr h2 {
+                font-size: 1.8rem;
+            }
+            .filtr-btuns {
+                gap: 8px;
+            }
+            
+            .filtr-btun {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .img-grd {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<body>
+    <!-- Header & Navbar -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo"><img src="D:\moinudeen\Alisha Solar Solution\alisha.jpg" height="80" width="120"></i> <span style="margin-left: 20px;">Alisha Solar Solution</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+  <section class="proj-gall">
+        <div class="sectin-headr">
+            <h2>Our Solar Projects</h2>
+            <p>Explore our successful solar energy installations and see how we're powering a sustainable future.</p>
+        </div>
+        
+       <!-- <div class="filtr-btuns">
+            <button class="filtr-btun active" data-filter="all">All Projects</button>
+            <button class="filtr-btun" data-filter="residential">Residential</button>
+            <button class="filtr-btun" data-filter="commercial">Commercial</button>
+            <button class="filtr-btun" data-filter="agricultural">Agricultural</button>
+            <button class="filtr-btun" data-filter="government">Government</button>
+        </div> -->
+        
+        <div class="img-grd">
+            <!-- Project 1 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img6.jpg', 'Residential Solar Installation')">
+                <img src="img6.jpg" alt="Residential Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Residential Solar</h3>
+                    <p class="img-dec">5kW solar installation in Mumbai</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img5.jpg', 'Commercial Solar Farm')">
+                <img src="img5.jpg" alt="Commercial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Commercial Solar</h3>
+                    <p class="img-dec">500kW solar plant in Gujarat</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="gall-itm" data-category="agricultural" onclick="openligtbox('img7.jpg', 'Agricultural Solar Pumping')">
+                <img src="img7.jpg" alt="Agricultural Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Agricultural Solar</h3>
+                    <p class="img-dec">Solar-powered water pumping</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="gall-itm" data-category="government" onclick="openligtbox('img1.jpg', 'Government Solar Project')">
+                <img src="img1.jpg" alt="Government Solar" class="gall-img"><div class="img-overly">
+                    <h3 class="img-titl">Government Project</h3>
+                    <p class="img-dec">Municipal solar installation</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img3.jpg', 'Rooftop Solar Installation')">
+                <img src="img3.jpg" alt="Rooftop Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Rooftop Solar</h3>
+                    <p class="img-dec">10kW system for a home</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img9.jpg', 'Industrial Solar Plant')">
+                <img src="img9.jpg" alt="Industrial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Industrial Solar</h3>
+                    <p class="img-dec">1MW plant for factory</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section class="proj-gall">
+        
+        
+       <!-- <div class="filtr-btuns">
+            <button class="filtr-btun active" data-filter="all">All Projects</button>
+            <button class="filtr-btun" data-filter="residential">Residential</button>
+            <button class="filtr-btun" data-filter="commercial">Commercial</button>
+            <button class="filtr-btun" data-filter="agricultural">Agricultural</button>
+            <button class="filtr-btun" data-filter="government">Government</button>
+        </div> -->
+        
+        <div class="img-grd">
+            <!-- Project 1 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img12.jpg', 'Residential Solar Installation')">
+                <img src="img12.jpg" alt="Residential Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Residential Solar</h3>
+                    <p class="img-dec">5kW solar installation in Mumbai</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img13.jpg', 'Commercial Solar Farm')">
+                <img src="img13.jpg" alt="Commercial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Commercial Solar</h3>
+                    <p class="img-dec">500kW solar plant in Gujarat</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="gall-itm" data-category="agricultural" onclick="openligtbox('img18.jpg', 'Agricultural Solar Pumping')">
+                <img src="img18.jpg" alt="Agricultural Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Agricultural Solar</h3>
+                    <p class="img-dec">Solar-powered water pumping</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="gall-itm" data-category="government" onclick="openligtbox('img16.jpg', 'Government Solar Project')">
+                <img src="img16.jpg" alt="Government Solar" class="gall-img"><div class="img-overly">
+                    <h3 class="img-titl">Government Project</h3>
+                    <p class="img-dec">Municipal solar installation</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img17.jpg', 'Rooftop Solar Installation')">
+                <img src="img17.jpg" alt="Rooftop Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Rooftop Solar</h3>
+                    <p class="img-dec">10kW system for a home</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img18.jpg', 'Industrial Solar Plant')">
+                <img src="img18.jpg" alt="Industrial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Industrial Solar</h3>
+                    <p class="img-dec">1MW plant for factory</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+          <section class="proj-gall">
+        
+        
+       <!-- <div class="filtr-btuns">
+            <button class="filtr-btun active" data-filter="all">All Projects</button>
+            <button class="filtr-btun" data-filter="residential">Residential</button>
+            <button class="filtr-btun" data-filter="commercial">Commercial</button>
+            <button class="filtr-btun" data-filter="agricultural">Agricultural</button>
+            <button class="filtr-btun" data-filter="government">Government</button>
+        </div> -->
+        
+        <div class="img-grd">
+            <!-- Project 1 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img19.jpg', 'Residential Solar Installation')">
+                <img src="img19.jpg" alt="Residential Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Residential Solar</h3>
+                    <p class="img-dec">5kW solar installation in Mumbai</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img20.jpg', 'Commercial Solar Farm')">
+                <img src="img20.jpg" alt="Commercial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Commercial Solar</h3>
+                    <p class="img-dec">500kW solar plant in Gujarat</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="gall-itm" data-category="agricultural" onclick="openligtbox('img21.jpg', 'Agricultural Solar Pumping')">
+                <img src="img21.jpg" alt="Agricultural Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Agricultural Solar</h3>
+                    <p class="img-dec">Solar-powered water pumping</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="gall-itm" data-category="government" onclick="openligtbox('img2.jpg', 'Government Solar Project')">
+                <img src="img2.jpg" alt="Government Solar" class="gall-img"><div class="img-overly">
+                    <h3 class="img-titl">Government Project</h3>
+                    <p class="img-dec">Municipal solar installation</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img4.jpg', 'Rooftop Solar Installation')">
+                <img src="img4.jpg" alt="Rooftop Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Rooftop Solar</h3>
+                    <p class="img-dec">10kW system for a home</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img14.jpg', 'Industrial Solar Plant')">
+                <img src="img14.jpg" alt="Industrial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Industrial Solar</h3>
+                    <p class="img-dec">1MW plant for factory</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="proj-gall">
+        
+        
+       <!-- <div class="filtr-btuns">
+            <button class="filtr-btun active" data-filter="all">All Projects</button>
+            <button class="filtr-btun" data-filter="residential">Residential</button>
+            <button class="filtr-btun" data-filter="commercial">Commercial</button>
+            <button class="filtr-btun" data-filter="agricultural">Agricultural</button>
+            <button class="filtr-btun" data-filter="government">Government</button>
+        </div> -->
+        
+        <div class="img-grd">
+            <!-- Project 1 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img23.jpg', 'Residential Solar Installation')">
+                <img src="img23.jpg" alt="Residential Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Residential Solar</h3>
+                    <p class="img-dec">5kW solar installation in Mumbai</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img24.jpg', 'Commercial Solar Farm')">
+                <img src="img24.jpg" alt="Commercial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Commercial Solar</h3>
+                    <p class="img-dec">500kW solar plant in Gujarat</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="gall-itm" data-category="agricultural" onclick="openligtbox('img25.jpg', 'Agricultural Solar Pumping')">
+                <img src="img25.jpg" alt="Agricultural Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Agricultural Solar</h3>
+                    <p class="img-dec">Solar-powered water pumping</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="gall-itm" data-category="government" onclick="openligtbox('img26.jpg', 'Government Solar Project')">
+                <img src="img26.jpg" alt="Government Solar" class="gall-img"><div class="img-overly">
+                    <h3 class="img-titl">Government Project</h3>
+                    <p class="img-dec">Municipal solar installation</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="gall-itm" data-category="residential" onclick="openligtbox('img27.jpg', 'Rooftop Solar Installation')">
+                <img src="img27.jpg" alt="Rooftop Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Rooftop Solar</h3>
+                    <p class="img-dec">10kW system for a home</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="gall-itm" data-category="commercial" onclick="openligtbox('img28.jpg', 'Industrial Solar Plant')">
+                <img src="img28.jpg" alt="Industrial Solar" class="gall-img">
+                <div class="img-overly">
+                    <h3 class="img-titl">Industrial Solar</h3>
+                    <p class="img-dec">1MW plant for factory</p>
+                </div>
+                <div class="zom-icn">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ligtbox -->
+    <div class="ligtbox" id="ligtbox">
+        <div class="ligtbox-contnt">
+            <span class="clos-ligtbox" onclick="closeligtbox()">&times;</span>
+            <img src="" alt="" class="ligtbox-img" id="ligtbox-img">
+            <p class="ligtbox-captin" id="ligtbox-captin"></p>
+            <div class="ligtbox-nav">
+                <button onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <section class="projects-gallery">
+        <div class="section-header">
+            <h2>Video Gallery</h2>
+        </div>
+        
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-card" onclick="openLightbox('vid2.mp4')">
+                <div class="video-thumbnail">
+                    <video src="vid2.mp4"></video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Residential Solar Project</h3>
+                    <p>5kW solar installation for a family home in Mumbai with battery backup.</p>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="video-card" onclick="openLightbox('vid3.mp4')">
+                <div class="video-thumbnail">
+                    <video src="vid3.mp4"></video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Commercial Solar Farm</h3>
+                    <p>500kW solar plant for a textile factory in Gujarat.</p>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-card" onclick="openLightbox('vid4.mp4')">
+                <div class="video-thumbnail">
+                    <video src="vid4.mp4"></video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Agricultural Solar Solution</h3>
+                    <p>Solar-powered water pumping system for farm irrigation in Punjab.</p>
+                </div>
+            </div>
+            
+            <!-- Video 4 -->
+            <div class="video-card" onclick="openLightbox('vid5.mp4')">
+                <div class="video-thumbnail">
+                    <video src="vid5.mp4"></video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Rooftop Solar Installation</h3>
+                    <p>10kW rooftop solar system for a school in Bangalore.</p>
+                </div>
+            </div>
+            
+            <!-- Video 5 -->
+            <div class="video-card" onclick="openLightbox('vid6.mp4')">
+                <div class="video-thumbnail">
+                    <video src="vid6.mp4"></video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Solar Street Lighting</h3>
+                    <p>Municipal solar street light project in rural Maharashtra.</p>
+                </div>
+            </div>
+            
+            <!-- Video 6 -->
+            <div class="video-card" onclick="openLightbox('vid7.mp4')">
+                <div class="video-thumbnail">
+                    <video src="vid7.mp4"></video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Solar Carport Project</h3>
+                    <p>Innovative solar carport with EV charging at corporate office.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <iframe class="lightbox-video" id="lightbox-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Alisha Solar Solution</h3>
+                    <p>Leading provider of solar energy solutions with a commitment to quality, sustainability, and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="project.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Residential Solar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Commercial Solar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Solar Storage</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Maintenance</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Energy Audit</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates on solar technology and special offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AlishaSolarSolution. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for a greener planet</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
+<script>
+        // Open lightbox with video
+        function openLightbox(videoUrl) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            
+            lightboxVideo.src = videoUrl;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            
+            lightboxVideo.src = '';
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close when clicking outside video
+        window.onclick = function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        }
+
+                // ligtbox functionality
+        const ligtbox = document.getElementById('ligtbox');
+        const ligtboxImg = document.getElementById('ligtbox-img');
+        const ligtboxCaption = document.getElementById('ligtbox-captin');
+        const galleryItems = document.querySelectorAll('.gall-itm');
+        let currentIndex = 0;
+        
+        function openligtbox(imgSrc, caption) {
+            ligtbox.style.display = 'flex';
+            ligtboxImg.src = imgSrc;
+            ligtboxCaption.textContent = caption;
+            document.body.style.overflow = 'hidden';
+            
+            // Find current index
+            galleryItems.forEach((item, index) => {
+                if (item.getAttribute('onclick').includes(imgSrc)) {
+                    currentIndex = index;
+                }
+            });
+        }
+        
+        function closeligtbox() {
+            ligtbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateligtbox();
+        }
+        
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateligtbox();
+        }
+        
+        function updateligtbox() {
+            const item = galleryItems[currentIndex];
+            const imgSrc = item.querySelector('img').src.replace('/600/', '/1200/');
+            const caption = item.querySelector('.img-titl').textContent + ' - ' + item.querySelector('.img-dec').textContent;
+            
+            ligtboxImg.src = imgSrc;
+            ligtboxCaption.textContent = caption;
+        }
+        
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == ligtbox) {
+                closeligtbox();
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (ligtbox.style.display === 'flex') {
+                if (e.key === 'ArrowRight') {
+                    nextImage();
+                } else if (e.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (e.key === 'Escape') {
+                    closeligtbox();
+                }
+            }
+        });
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filtr-btun');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                const items = document.querySelectorAll('.gall-itm');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>

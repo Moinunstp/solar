@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisha Solar Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="alisha.jpg" style="border-radius:50%;">
+</head>
+<style>
+    .wave-contact-section {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin: 0px 0;
+}
+
+.wave-container {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+}
+
+.wave {
+    background: ;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23ffffff" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"/></svg>');
+  background-size: 1200px 100px;
+}
+
+.wave1 {
+  animation: wave-animate 30s linear infinite;
+  opacity: 0.8;
+}
+
+.wave2 {
+  animation: wave-animate 15s linear infinite reverse;
+  opacity: 0.5;
+  bottom: 10px;
+}
+
+.wave3 {
+  animation: wave-animate 7s linear infinite;
+  opacity: 0.2;
+  bottom: 15px;
+}
+
+.contact-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  width: 100%;
+}
+
+.contact-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.contact-bubbles {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bubble:hover {
+  transform: translateY(-10px) scale(1.1);
+  background: rgba(255,255,255,0.3);
+}
+
+.bubble i {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.bubble span {
+  font-size: 0.9rem;
+}
+
+@keyframes wave-animate {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1200px; }
+}
+
+@media (max-width: 768px) {
+  .contact-bubbles {
+    gap: 15px;
+  }
+  
+  .bubble {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .bubble i {
+    font-size: 24px;
+  }
+  
+  .bubble span {
+    font-size: 0.8rem;
+  }
+}
+</style>
+<body>
+    <!-- Header & Navbar -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo"><img src="D:\moinudeen\Alisha Solar Solution\alisha.jpg" height="80" width="120"></i> <span style="margin-left: 20px;">Alisha Solar Solution</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="wave-contact-section" style="top: 100px;">
+  <div class="wave-container">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="contact-content">
+      <h2>Reach Out to Us</h2>
+      <div class="contact-bubbles">
+        <a href="tel:+919166716699" class="bubble">
+          <i class="fas fa-phone"></i>
+          <span>Call Us</span>
+        </a>
+        <a href="alishaelectricals086@gmail.com" class="bubble">
+          <i class="fas fa-envelope"></i>
+          <span>Email Us</span>
+        </a>
+        <a href="https://wa.me/+919166716699" class="bubble">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://maps.app.goo.gl/wykQyw9dXWxeQoyS8" class="bubble">
+          <i class="fa fa-location"></i>
+          <span>Location</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- Contact Section -->
+    <section class="section" id="contact" style="margin-top: 80px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Ready to switch to solar? Contact us for a free consultation and quote.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Talk About Your Solar Needs</h3>
+                    <p>Our solar experts are ready to answer your questions and help you design the perfect solar energy system for your home or business.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Housing bourd,near home gaurd office,beawar road,nasirabad(305601)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+91 9166716699">+91 916-6716-699</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="alishaelectricals086@gmail.com">alishaelectricals086@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Hours</h4>
+                                <p>Monday - Friday: 9am - 6pm</p>
+                                <p>Saturday: 10am - 4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Your Phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="">Select Service</option>
+                                <option value="residential">Residential Solar</option>
+                                <option value="commercial">Commercial Solar</option>
+                                <option value="storage">Solar Storage</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Alisha Solar Solution</h3>
+                    <p>Leading provider of solar energy solutions with a commitment to quality, sustainability, and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="project.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Residential Solar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Commercial Solar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Solar Storage</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Maintenance</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Energy Audit</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates on solar technology and special offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AlishaSolarSolution. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for a greener planet</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
